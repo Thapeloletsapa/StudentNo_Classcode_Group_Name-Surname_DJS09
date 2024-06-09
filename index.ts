@@ -1,13 +1,13 @@
 import { showReviewTotal, populateUser } from './utils'
-import { Permissions, LoyaltyUser } from './enums'
+import { Permissions , LoyaltyUser } from './enums'
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
 
-let isOpen: boolean
+
+let isLoggedIn: boolean
 
 
-//Reviews
-
+// Reviews
 const reviews : any[] = [
     {
         name: 'Sheia',
@@ -30,23 +30,36 @@ const reviews : any[] = [
     },
 ]
 
-//user
-const you: {
-    firstName: string;
-    lastName: string;
-    isReturning: boolean;
-    age: number;
-    stayedAt: string[]
-} = {
+const you = {
     firstName: 'Bobby',
     lastName: 'Brown',
+    permissions: Permissions.ADMIN,
     isReturning: true,
     age: 35,
-    stayedAt: ['Florida-home', 'oman-flat', 'tokyo-bungalow']
+    stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
+
+
+// Functions
+showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
+populateUser(you.isReturning, you.firstName)
+
+let authorityStatus : any
+
+isLoggedIn = false
+
+function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
+   if (authorityStatus) {
+       const priceDisplay = document.createElement('div')
+       priceDisplay.innerHTML = price.toString() + '/night'
+       element.appendChild(priceDisplay)
+   }
+}
+
+
 //Array of Properties
-const properties: {
+const properties : {
     image: string;
     title: string;
     price: number;
@@ -56,7 +69,7 @@ const properties: {
         code: number;
         country: string;
     };
-    contact: [number, string];
+    contact: [ number, string ];
     isAvailable: boolean;
 }[] = [
     {
@@ -99,11 +112,23 @@ const properties: {
         isAvailable: true
     }
 ]
+
 // Functions
 
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
-
 populateUser(you.isReturning, you.firstName)
+
+let authorityStatus : any
+
+isLoggedIn = false
+
+function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
+   if (authorityStatus) {
+       const priceDisplay = document.createElement('div')
+       priceDisplay.innerHTML = price.toString() + '/night'
+       element.appendChild(priceDisplay)
+   }
+}
 
 // Add the properties
 for (let i = 0; i < properties.length; i++) {
@@ -114,8 +139,10 @@ for (let i = 0; i < properties.length; i++) {
     image.setAttribute('src', properties[i].image)
     card.appendChild(image)
     propertyContainer.appendChild(card)
+    showDetails(you.permissions, card, properties[i].price)
 }
 
-let currentLocation : [string, string, number] = ['South Africa', '10.00', 13]
+
+let currentLocation : [string, string, number] = ['London', '11.03', 17]
 footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°'
 
