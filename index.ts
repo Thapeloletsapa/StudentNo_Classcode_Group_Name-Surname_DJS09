@@ -120,7 +120,6 @@ for (let i = 0; i < properties.length; i++) {
     propertyContainer.appendChild(card)
 }
 
-// use your location, your current time, and the current temperature of your
-// location
-let currentLocation: [string, string, number] = ['South Africa', '09:35', 20]
-footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1]+ ' '+currentLocation[2] + '°'
+let currentLocation : [string, string, number] = ['South Africa', '10.00', 13]
+footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°'
+
