@@ -1,8 +1,18 @@
-const reviewTotalDisplay = document.querySelector('#reviews')
-const returningUserDisplay = document.querySelector('#returning-user')
-const userNameDisplay = document.querySelector('#user')
-import { LoyaltyUser, Permissions } from './enums'
-import  Review  from './interfaces'
+import { Review } from './interfaces'
+const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement
+const returningUserDisplay = document.querySelector('#returning-user') as HTMLElement
+const userNameDisplay = document.querySelector('#user') as HTMLElement
+
+enum Permissions {
+    ADMIN = 'ADMIN', 
+    READ_ONLY = 'READ_ONLY'
+}
+
+enum LoyaltyUser {
+    GOLD_USER = 'GOLD_USER',
+    SILVER_USER = 'SILVER_USER',
+    BRONZE_USER = 'BRONZE_USER'
+}
 
 export function showReviewTotal(value: number, reviewer: string, isLoyalty: LoyaltyUser) {
     const iconDisplay = LoyaltyUser.GOLD_USER ? '⭐' : ''
@@ -10,7 +20,7 @@ export function showReviewTotal(value: number, reviewer: string, isLoyalty: Loya
 }
 
 export function populateUser(isReturning : boolean, userName: string ) {
-    if (isReturning){
+    if (isReturning == true){
         returningUserDisplay.innerHTML = 'back'
     }
     userNameDisplay.innerHTML = userName
@@ -31,6 +41,6 @@ export function makeMultiple(value: number) : string {
 }
 
 export function getTopTwoReviews(reviews : Review[]) : Review[]  {
- const sortedReviews = reviews.sort((a, b) => b.stars - a.stars)
- return sortedReviews.slice(0,2)
-}
+    const sortedReviews = reviews.sort((a, b) => b.stars - a.stars)
+    return sortedReviews.slice(0,2)
+   }
