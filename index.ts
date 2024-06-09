@@ -1,10 +1,19 @@
-// Number Types mini-challenge 10 10.2
-// Write a function that will only accept numbers and attend to 
-// all TypeScript weakness flags.
-// : number
-const reviewTotalDisplay = document.querySelector('#reviews')
+const propertyContainer = document.querySelector('.properties')
+const footer = document.querySelector('.footer')
 
-const reviews = [
+
+
+import { showReviewTotal, populateUser } from './utils'
+let isOpen: boolean
+
+//Reviews
+
+const reviews :{
+    name: string;
+    stars: number;
+    loyaltyUser:boolean;
+    date: string
+} [] = [
     {
         name: 'Sheia',
         stars: 5,
