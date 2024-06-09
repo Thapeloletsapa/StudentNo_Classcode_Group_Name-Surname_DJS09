@@ -89,3 +89,17 @@ const properties: {
         contact: [+1298239028490830, 'garydavis@hotmail.com'],
         isAvailable: false 
     },
+    {
+        image: 'images/london-property.jpg',
+        title: 'London Flat',
+        price: 23,
+        location: {
+            firstLine: 'flat 15',
+            city: 'London',
+            code: 35433,
+            country: 'United Kingdom',
+        },
+        contact: [+34829374892553, 'andyluger@aol.com'],
+        isAvailable: true
+    }
+]
