@@ -76,3 +76,16 @@ const properties: {
         contact: [+112343823978921, 'marywinkle@gmail.com'],
         isAvailable: true  
     },
+    {
+        image: 'images/poland-property.jpg',
+        title: 'Polish Cottage',
+        price: 34,
+        location: {
+            firstLine: 'no 23',
+            city: 'Gdansk',
+            code: 343903,
+            country: 'Poland'
+        },
+        contact: [+1298239028490830, 'garydavis@hotmail.com'],
+        isAvailable: false 
+    },
