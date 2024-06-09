@@ -33,3 +33,17 @@ const reviews :{
         date: '27-03-2021'
     },
 ]
+
+const you: {
+    firstName: string;
+    lastName: string;
+    isReturning: boolean;
+    age: number;
+    stayedAt: string[]
+} = {
+    firstName: 'Bobby',
+    lastName: 'Brown',
+    isReturning: true,
+    age: 35,
+    stayedAt: ['Florida-home', 'oman-flat', 'tokyo-bungalow']
+}
