@@ -15,10 +15,20 @@ export function populateUser(isReturning : boolean, userName: string ) {
     userNameDisplay.innerHTML = userName
 }
 
-export function showDetails(value: boolean | Permissions, element : HTMLElement, price: number) {
+export function showDetails(value: boolean | Permissions, element : HTMLDivElement, price: number) {
     if (value) {
         const priceDisplay = document.createElement('div')
         priceDisplay.innerHTML = price.toString() + '/night'
         element.appendChild(priceDisplay)
     }
+}
+
+function add( firstValue, secondValue) {
+    return firstValue + secondValue
+}
+
+export function makeMultiple(value: number) {
+    if (value > 1) {
+        return 's'
+    } 
 }
