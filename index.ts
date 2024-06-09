@@ -34,6 +34,7 @@ const reviews :{
     },
 ]
 
+//user
 const you: {
     firstName: string;
     lastName: string;
@@ -47,3 +48,31 @@ const you: {
     age: 35,
     stayedAt: ['Florida-home', 'oman-flat', 'tokyo-bungalow']
 }
+
+//Array of Properties
+const properties: {
+    image: string;
+    title: string;
+    price: number;
+    location: {
+        firstLine: string;
+        city: string;
+        code: number;
+        country: string;
+    };
+    contact: [number, string];
+    isAvailable: boolean;
+}[] = [
+    {
+        image: 'images/colombia-property.jpg',
+        title: 'Colombian Shack',
+        price: 45,
+        location: {
+            firstLine: 'shack 37',
+            city: 'Bogota',
+            code: 45632,
+            country: 'Colombia'
+        },
+        contact: [+112343823978921, 'marywinkle@gmail.com'],
+        isAvailable: true  
+    },
