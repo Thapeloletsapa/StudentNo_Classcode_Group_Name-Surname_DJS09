@@ -103,3 +103,9 @@ const properties: {
         isAvailable: true
     }
 ]
+// Functions
+
+showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
+
+populateUser(you.isReturning, you.firstName)
+
