@@ -39,26 +39,7 @@ const you = {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
-
-
-// Functions
-showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
-populateUser(you.isReturning, you.firstName)
-
-let authorityStatus : any
-
-isLoggedIn = false
-
-function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
-   if (authorityStatus) {
-       const priceDisplay = document.createElement('div')
-       priceDisplay.innerHTML = price.toString() + '/night'
-       element.appendChild(priceDisplay)
-   }
-}
-
-
-//Array of Properties
+// Array of Properties
 const properties : {
     image: string;
     title: string;
@@ -114,7 +95,6 @@ const properties : {
 ]
 
 // Functions
-
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.firstName)
 
@@ -123,11 +103,11 @@ let authorityStatus : any
 isLoggedIn = false
 
 function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
-   if (authorityStatus) {
-       const priceDisplay = document.createElement('div')
-       priceDisplay.innerHTML = price.toString() + '/night'
-       element.appendChild(priceDisplay)
-   }
+    if (authorityStatus) {
+        const priceDisplay = document.createElement('div')
+        priceDisplay.innerHTML = price.toString() + '/night'
+        element.appendChild(priceDisplay)
+    }
 }
 
 // Add the properties
@@ -143,6 +123,8 @@ for (let i = 0; i < properties.length; i++) {
 }
 
 
+
 let currentLocation : [string, string, number] = ['London', '11.03', 17]
 footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°'
+
 
