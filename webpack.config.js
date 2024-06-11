@@ -1,6 +1,11 @@
+const path = require('path');
+
 module.exports = {
+  "mode": "development",
+  "devtool": "inline-source-map",
   "output": {
-    "filename": "[name].pack.js"
+    "filename": "[name].pack.js",
+    "path": path.resolve(__dirname, 'public'),
   },
   "entry": {
     "index": "./index"
